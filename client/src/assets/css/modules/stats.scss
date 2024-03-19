@@ -1,0 +1,30 @@
+.stats {
+	&__item {
+		color: $white;
+		border: none;
+		&.m--red {
+			background: linear-gradient(270deg, #F39034 -2%, #FF2727 102%);
+		}
+		&.m--blue {
+			background: linear-gradient(270deg, #0097EC -2%, #003AD2 102%);;
+		}
+		&.m--green {
+			background: linear-gradient(270deg, #1FD071 -2%, #00A843 102%);
+		}
+		&.m--purple {
+			background: linear-gradient(270deg, #9852F0 -2%, #5900C9 102%);
+		}
+		&-title {
+			font-weight: 700;
+			font-size: 2.5rem;
+			line-height: 1;
+			padding-bottom: 0.8rem;
+			white-space: nowrap;
+		}
+		&-info {
+			font-weight: 600;
+			font-size: 1.25rem;
+			line-height: 1.5;
+		}
+	}
+}

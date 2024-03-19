@@ -1,0 +1,32 @@
+@import './modules/fonts.scss';
+
+@import './_colors.scss';
+@import './_bootstrap.scss';
+@import './bootstrap/bootstrap.scss';
+@import './settings.scss';
+@import './mixins/_breakpoints.scss';
+@import './mixins/_scrollbar.scss';
+
+@import './common.scss';
+@import './modules/app.scss';
+/*
+@import './modules/sidebar.scss';
+@import './modules/topbar.scss';
+@import './modules/contacts.scss';
+*/
+@import './modules/auth.scss';
+@import './modules/home.scss';
+/* Bootstrap theme */
+@import './modules/icon.scss';
+@import './modules/btn.scss';
+/*@import './modules/multiselect.scss';*/
+@import './modules/loader.scss';
+@import './modules/map.scss';
+@import './modules/menu.scss';
+@import './modules/modal.scss';
+@import './modules/profile.scss';
+@import './modules/question.scss';
+@import './modules/stats.scss';
+/*@import './modules/table.scss';*/
+@import './modules/ticket.scss';
+@import './modules/tickets.scss';

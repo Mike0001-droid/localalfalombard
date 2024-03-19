@@ -1,0 +1,73 @@
+.contacts {
+	&__item {
+		position: relative;
+		padding-left: 30px;
+		font-size: 16px;
+		line-height: 24px;
+		margin-bottom: 10px;
+		&:before {
+			content: '';
+			position: absolute;
+			display: block;
+			top: 50%;
+			margin-top: -12px;
+			left: 0;
+			width: 24px;
+			height: 24px;
+			background-position: 50% 50%;
+			background-repeat: no-repeat;
+			background-size: 24px 24px;
+		}
+		&.m--phone:before {
+			background-image: url('./assets/img/icons/phone.svg');
+			background-size: 18px 18px;
+		}
+		&.m--mail:before {
+			background-image: url('./assets/img/icons/mail.svg');
+			background-size: 18px 18px;
+		}
+		&.m--web:before {
+			background-image: url('./assets/img/icons/web.svg');
+		}
+	}
+	&.m--white &__item {
+		color: $color-white;
+	}
+	&__socials {
+		position: relative;
+		display: flex;
+		&-item {
+			position: relative;
+			display: block;
+			width: 18px;
+			height: 18px;
+			transition: opacity 0.15s ease-in-out;
+			&:before {
+				content: '';
+				position: absolute;
+				display: block;
+				top: 50%;
+				margin-top: -9px;
+				left: 50%;
+				margin-left: -9px;
+				width: 18px;
+				height: 18px;
+				background-position: 50% 50%;
+				background-repeat: no-repeat;
+				background-size: 18px 18px;
+			}
+			&:hover {
+				opacity: 0.6;
+			}
+			&.m--fb:before {
+				background-image: url('./assets/img/icons/fb.svg');
+			}
+			&.m--ig:before {
+				background-image: url('./assets/img/icons/ig.svg');
+			}
+			&.m--vk:before {
+				background-image: url('./assets/img/icons/vk.svg');
+			}
+		}
+	}
+}

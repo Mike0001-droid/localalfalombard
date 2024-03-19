@@ -1,0 +1,111 @@
+.ticket {
+	&__title {}
+	&__status {}
+	&__subject {
+		&-title {
+			font-weight: 700;
+			text-transform: uppercase;
+			margin-bottom: 1rem;
+		}
+		ul {
+			padding-left: 1rem;
+			li {
+				padding-bottom: 0.25rem;
+			}
+		}
+	}
+	&__sum {
+		&-value {
+			font-weight: 700;
+			font-size: 1.25rem;
+			margin-bottom: 0.5rem;
+		}
+		&-label {
+			font-weight: 700;
+			text-transform: uppercase;
+			margin-bottom: 0.5rem;
+		}
+		&-date {
+			font-size: 0.875rem;
+		}
+	}
+	&__paydata {
+		&-item {}
+		&-title {
+			font-weight: 700;
+			text-transform: uppercase;
+			color: $blue;
+			margin-top: 0.75rem;
+			margin-bottom: 1rem;
+		}
+		&-value {
+			font-weight: 700;
+			font-size: 1.25rem;
+			margin-bottom: 0.5rem;
+		}
+		&-label {
+			font-weight: 700;
+			text-transform: uppercase;
+			margin-bottom: 0.5rem;
+		}
+	}
+	&__info {
+		.card-body {
+			padding-bottom: 0;
+		}
+	}
+	&__dates {
+		.card-body {
+			padding-bottom: 0;
+		}
+	}
+	&__date {
+		margin-bottom: 1rem;
+		&-label {
+			font-weight: 700;
+			text-transform: uppercase;
+			margin-bottom: 0.5rem;
+		}
+		&-value {
+			font-weight: 500;
+			font-size: 1rem;
+			margin-bottom: 0.5rem;
+		}
+	}
+	&__button {
+		font-size: 1rem;
+		padding-top: 0.6875rem;
+		padding-bottom: 0.6875rem;
+	}
+	.form-control[readonly] {
+		background-color: $white;
+	}
+	&__calendar {
+		.form-control {
+			background-image: url('./assets/img/icons/calendar.svg');
+			background-position: right 0.5rem center;
+			background-repeat: no-repeat;
+			background-size: 1.5rem 1.5rem;
+			font-size: 1rem;
+			padding-top: 0.6875rem;
+			padding-bottom: 0.6875rem;
+		}
+	}
+	&__help {
+		position: relative;
+		padding-left: 2rem;
+		&:before {
+			content: '';
+			position: absolute;
+			display: block;
+			top: 0;
+			left: 0.25rem;
+			width: 1.25rem;
+			height: 1.25rem;
+			background: url('./assets/img/icons/info.svg') 50% 50% no-repeat;
+		}
+	}
+	&__payresult {
+		position: relative;
+	}
+}

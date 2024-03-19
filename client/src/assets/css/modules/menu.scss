@@ -1,0 +1,123 @@
+.menu {
+	position: relative;
+	display: block;
+	width: $menu-width;
+	background: $white;
+	padding-bottom: 2rem;
+
+	&__item {
+		position: relative;
+		display: block;
+		padding: 0 0 0 2rem;
+		line-height: 1.25rem;
+		&:hover:before,
+		&.is-active:before {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 0;
+			width: 6px;
+			height: 26px;
+			margin-top: -13px;
+			background: $blue;
+		}
+		&.m--devider {
+			border-bottom: 1px solid $gray;
+			margin: 0.5rem 1.5rem 0.5rem 2.5rem;
+		}
+		&-link {
+			position: relative;
+			display: block;
+			padding: 1rem 0.5rem 1rem 2.875rem;
+			&:before {
+				content: '';
+				position: absolute;
+				display: none;
+				top: 50%;
+				left: 12px;
+				width: 24px;
+				height: 24px;
+				margin-top: -12px;
+				-webkit-mask-position: center;
+				mask-position: center;
+				-webkit-mask-repeat: no-repeat;
+				mask-repeat: no-repeat;
+				background-color: $black;
+			}
+			&[class*="m--"]:before {
+				display: block;
+			}
+			&.m--tickets:before {
+				-webkit-mask-image: url('./assets/img/icons/tickets.svg');
+				mask-image: url('./assets/img/icons/tickets.svg');
+			}
+			&.m--profile:before {
+				-webkit-mask-image: url('./assets/img/icons/profile.svg');
+				mask-image: url('./assets/img/icons/profile.svg');
+			}
+			&.m--help:before {
+				-webkit-mask-image: url('./assets/img/icons/help.svg');
+				mask-image: url('./assets/img/icons/help.svg');
+			}
+			&.m--map:before {
+				-webkit-mask-image: url('./assets/img/icons/map.svg');
+				mask-image: url('./assets/img/icons/map.svg');
+			}
+			&.m--question:before {
+				-webkit-mask-image: url('./assets/img/icons/question.svg');
+				mask-image: url('./assets/img/icons/question.svg');
+			}
+		}
+
+		&:hover &-link,
+		&.is-active &-link {
+			color: $blue;
+			font-weight: 700;
+			background: $gray-light;
+			border-radius: 2rem 0 0 2rem;
+			&:before {
+				background-color: $blue;
+			}
+		}
+		&.is-subactive &-link {
+			color: $blue;
+			font-weight: 700;
+		}
+		&-collapse {
+			position: absolute;
+			display: block;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			width: 3rem;
+			box-shadow: none !important;
+			border: 0;
+			background: none !important;
+			&:before {
+				content: '';
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				-webkit-mask-image: url('./assets/img/icons/arrow.svg');
+				mask-image: url('./assets/img/icons/arrow.svg');
+				-webkit-mask-position: center;
+				mask-position: center;
+				-webkit-mask-repeat: no-repeat;
+				mask-repeat: no-repeat;
+				background-color: $blue;
+				transform: rotateZ(180deg);
+
+				/*background: url('./assets/img/icons/arrow.svg') 50% 50% no-repeat;*/
+			}
+			&:hover:before {
+				background-color: $blue;
+			}
+			&.collapsed:before {
+				transform: rotateZ(0deg);
+				background-color: $black;
+			}
+		}
+	}
+}

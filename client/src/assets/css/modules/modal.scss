@@ -1,0 +1,46 @@
+.modal {
+	backdrop-filter: blur(10px);
+	&-dialog {
+		@include scrollbar($blue-100, $blue-700, $scrollbar-width);
+		@include media-breakpoint-between(sm, lg) {
+			max-width: 85vw;
+		}
+	}
+	&-dialog-scrollable .modal-content {
+	    max-height: calc(100vh - 220px);
+	}
+	&-header {
+		z-index: 100;
+		.btn-close {
+			padding: 16px;
+			background-color: $blue-dark;
+			border-radius: 50%;
+			color: #fff;
+			opacity: 1;
+			min-width: 1em;
+		}
+	}
+	&-title {
+		font-weight: 700;
+		font-size: 24px;
+		line-height: 30px;
+		text-transform: uppercase;
+		color: #003ad2;
+	}
+	&-body {
+		position: unset;
+		@include scrollbar($blue-100, $blue-700, $scrollbar-width);
+		margin: 0.5rem 1rem 1rem 0.5rem;
+		padding: 0rem 1rem 1.5rem 1.5rem;
+		color: $color-black;
+	}
+	a {
+		color: $blue;
+		
+		&:hover {
+			color: $color-red;
+			text-decoration: none;
+			/*text-decoration: underline;*/
+		}
+	}
+}

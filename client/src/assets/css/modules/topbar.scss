@@ -1,0 +1,37 @@
+.topbar {
+	&__menu {
+		position: relative;
+		&-item {
+			position: relative;
+			display: inline-block;
+			font-weight: 700;
+			font-size: 18px;
+			color: $color-middleblack !important;
+			padding: 0 0 0 28px;
+			height: 28px;
+			vertical-align: middle;
+			&:before {
+				content: '';
+				position: absolute;
+				display: block;
+				top: 50%;
+				margin-top: -15px;
+				left: 0;
+				width: 28px;
+				height: 28px;
+				background-position: 0% 50%;
+				background-repeat: no-repeat;
+				background-size: 24px 24px;
+			}
+			&.m--icon-person:before {
+				background-image: url('./assets/img/icons/person.svg');
+			}
+			&.m--icon-settings:before {
+				background-image: url('./assets/img/icons/settings.svg');
+			}
+			&.m--icon-alerts:before {
+				background-image: url('./assets/img/icons/alerts.svg');
+			}
+		}
+	}
+}

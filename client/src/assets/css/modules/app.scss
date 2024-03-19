@@ -1,0 +1,359 @@
+.app {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	background: $background;
+	&.m--white {
+		background: $white;
+	}
+	&__top {
+		position: relative;
+		display: flex;
+		align-items: center;
+		background: $white;
+		height: 100px;
+		padding: 12px 64px;
+		z-index: 1060;
+
+		&-logo {
+			display: block;
+			width: 320px;
+			min-width: 215px;
+			background: url('./assets/img/logo.svg') 50% 50% no-repeat;
+			background-size: 100% auto;
+			height: 100%;
+			margin-right: 56px;
+		}
+
+		&-block {
+			display: flex;
+			align-items: center;
+			/*margin-left: auto;*/
+			flex-grow: 1;
+			@include media-breakpoint-down(md) {
+				flex-direction: column;
+			}
+		}
+
+		&-contacts {
+			position: relative;
+			display: flex;
+			@include media-breakpoint-down(xl) {
+			}
+			@include media-breakpoint-down(md) {
+				height: 38px;
+				margin-left: auto;
+				margin-bottom: 8px;
+				justify-content: flex-end;
+			}
+			&-item {
+				position: relative;
+				display: block;
+				padding-left: 42px;
+				font-size: 1.25rem;
+				line-height: 1.25rem;
+				color: $color-middleblack;
+				margin-right: 1.5rem;
+				align-self: center;
+
+				&:hover {
+					text-decoration: none;
+				}
+
+				&:before {
+					content: '';
+					position: absolute;
+					top: 50%;
+					left: 0;
+					width: 38px;
+					height: 38px;
+					margin-top: -19px;
+				}
+
+				&.m--phone:before {
+					background: url('./assets/img/icons/phone.svg') 50% 50% no-repeat;
+				}
+
+				&.m--mail:before {
+					background: url('./assets/img/icons/mail.svg') 50% 50% no-repeat;
+				}
+
+				&.m--vk:before {
+					background: url('./assets/img/icons/vk.svg') 50% 50% no-repeat;
+				}
+				@include media-breakpoint-down(xl) {
+					font-size: 0;
+				}
+				@include media-breakpoint-down(md) {
+					margin-right: 0;
+					margin-left: 1.5rem;
+				}
+			}
+		}
+		&-menu {
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+			margin-left: auto;
+			@include media-breakpoint-down(xl) {
+				margin-left: 0;
+			}
+
+			&-item {
+				display: block;
+				font-size: 18px;
+				line-height: 18px;
+				font-weight: 700;
+				text-transform: uppercase;
+				margin-left: 24px;
+				color: $color-middleblack;
+			}
+		}
+		&-user {
+			font-weight: 500;
+			font-size: 20px;
+			line-height: 29px;
+			/*line-height: 12px;*/
+			/*text-transform: uppercase;*/
+			margin-left: auto;
+		}
+	}
+	&__header {
+		position: relative;
+		display: flex;
+		height: 500px;
+		background: $color-black url('./assets/img/bg/header.png') 50% 50% no-repeat;
+		background-size: auto 100%;
+		mix-blend-mode: multiply;
+		&-inner {
+			position: relative;
+			display: flex;
+			margin: 0 auto;
+			width: 100%;
+			max-width: $place-max-width;
+			justify-content: space-between;
+			align-items: center;
+			padding: 0 64px;
+		}
+
+		&-info {
+			color: $white;
+		}
+
+		&-pic {
+			height: 100%;
+			width: 50%;
+			/*background: url('./assets/img/bg/header-pic.svg') 50% 50% no-repeat;*/
+			background-size: auto 330px;
+			/*mix-blend-mode: multiply;*/
+		}
+
+		&-top {
+			font-size: 14px;
+			line-height: 14px;
+			font-weight: 600;
+			margin-bottom: 16px;
+		}
+
+		&-title {
+			font-size: 40px;
+			line-height: 40px;
+			font-weight: 700;
+			margin-bottom: 16px;
+			color: $white;
+			max-width: 360px;
+		}
+
+		&-desc {
+			font-size: 14px;
+			line-height: 28px;
+			padding-bottom: 16px;
+
+			ul {
+				padding-left: 1rem;
+			}
+
+			li {
+				margin-bottom: 6px;
+			}
+		}
+
+		&-buttons {
+			.btn {
+				text-transform: uppercase;
+				margin-right: 1.5rem;
+				font-size: 18px;
+				font-weight: 600;
+				/*line-height: 25px !important;*/
+				letter-spacing: 1.5px;
+				padding-left: 2rem;
+				padding-right: 2rem;
+			}
+		}
+	}
+	&__menu {
+		z-index: 10;
+	}
+	&__main {
+		flex-grow: 1;
+/*
+		@include media-breakpoint-down(xl) {
+			width: calc(100% - 300px);	
+		}
+
+		@include media-breakpoint-down(lg) {
+			width: calc(100% - 100px);	
+		}
+*/
+	}
+	&__block {
+		position: relative;
+		width: calc(100% - $menu-width);
+		padding-left: 52px;
+		padding-right: 64px;
+		&.m--width-100 {
+			width: 100%;
+			padding-left: 64px;
+		}
+	}
+	&__footer {
+		position: relative;
+		display: flex;
+		margin: auto auto 0;
+		width: 100%;
+		justify-content: space-between;
+		padding: 2rem 64px;
+		background: #f7f9fa;
+		font-weight: 500;
+		@include media-breakpoint-down(xl) {
+			flex-wrap: wrap;
+		}
+
+		&.m--white {
+			background: $white;
+		}
+
+		&-left {
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			padding-right: 2rem;
+			width: 33.33%;
+			@include media-breakpoint-down(md) {
+				width: 100%;
+				padding-right: 0;
+				padding-bottom: 1rem;
+			}
+		}
+
+		&-menu {
+			position: relative;
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: column;
+			font-weight: 700;
+			font-size: 16px;
+			line-height: 20px;
+			letter-spacing: 0.8px;
+			text-transform: uppercase;
+
+			&.m--small {
+				font-weight: 400;
+				font-size: 12px;
+				line-height: 22px;
+				text-transform: none;
+				flex-direction: row;
+			}
+
+			&-item {
+				color: #1f4173 !important;
+				display: block;
+				margin-bottom: 1rem;
+				&:hover,
+				&.is-active {
+					color: $color-red !important;
+				}
+			}
+
+			&.m--small &-item {
+				margin-bottom: 0;
+				margin-right: 1.5rem;
+				font-size: 12px;
+			}
+		}
+
+		&-copyright {
+			margin-top: auto;
+			font-weight: 400;
+			font-size: 12px;
+			line-height: 22px;
+			color: #1f4173;
+			margin-bottom: 12px;
+		}
+
+		&-info {
+			font-size: 10px;
+			line-height: 16px;
+			color: #1f4173;
+			width: 50%;
+			p {
+				margin-bottom: 0;
+			}
+			@include media-breakpoint-down(xl) {
+				width: 66.66%;
+			}
+			@include media-breakpoint-down(md) {
+				width: 100%;
+			}
+		}
+
+		&-right {
+			position: relative;
+			display: flex;
+			width: 16.66%;
+			padding-left: 1rem;
+			@include media-breakpoint-down(xl) {
+				padding-left: 0;
+				padding-top: 1rem;
+				width: 100%;
+			}
+		}
+
+		&-developer {
+			position: relative;
+			display: flex;
+			margin: auto 0 0 auto;
+			padding-right: 50px;
+			height: 40px;
+			font-weight: 500;
+			line-height: 20px;
+			align-items: center;
+			color: #bdbdbd !important;
+			text-transform: lowercase;
+			text-align: right;
+			letter-spacing: 1px;
+
+			&:after {
+				content: '';
+				position: absolute;
+				top: 0;
+				right: 0;
+				width: 40px;
+				height: 40px;
+				background: url('./assets/img/icons/flexites.svg') 50% 50% no-repeat;
+				background-size: contain;
+			}
+		}
+	}
+	a {
+		color: $color-black;
+		text-decoration: none;
+
+		&:hover {
+			color: $color-red;
+			/*text-decoration: underline;*/
+		}
+	}
+}

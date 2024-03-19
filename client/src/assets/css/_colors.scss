@@ -1,0 +1,117 @@
+/* Стандартные цвета */
+$white: #ffffff;
+
+
+$blue-dark: #1f4173;
+$blue: #0042B6;
+$blue-light: #e4eeff;
+
+$green: #008b37;
+$green-light: #e0ffee;
+
+$red: #eb0000;
+$red-light: #ffdada;
+
+$yellow: #ff8215;
+$yellow-light: #fff6dc;
+
+$purple: #5000b7;
+$purple-light: #f0e3ff;
+
+$gray-dark: #828282;
+$gray: #e2e2e2;
+$gray-light: #f7f9fa;
+
+$background: $gray-light;
+
+$color-black: #000000;
+$color-middleblack: #333;
+$color-lightblack: #4f4f4f;
+
+$color-darkgray: #828282;
+$color-gray: #a0aec0;
+$color-lightgray: #e4dbd2;
+
+$color-white: #ffffff;
+$color-white-70: rgba(255, 255, 255, 0.7);
+$color-white-80: rgba(255, 255, 255, 0.8);
+
+$color-red: #eb0000;
+
+
+$primary: $blue-dark;
+$primary-light: $blue-light;
+
+$secondary: $purple;
+$secondary-light: $purple-light;
+
+$success: $green;
+$success-light: $green-light;
+
+$warning: $yellow;
+$warning-light: $yellow-light;
+
+$danger: $red;
+$danger-light: $red-light;
+
+:root {
+
+}
+.bg-primary-light {
+	background-color: $primary-light !important;
+}
+.bg-secondary-light {
+	background-color: $secondary-light !important;
+}
+.bg-success-light {
+	background-color: $success-light !important;
+}
+.bg-warning-light {
+	background-color: $warning-light !important;
+}
+.bg-danger-light {
+	background-color: $danger-light !important;
+}
+
+.m--gray-dark {
+	color: $gray-dark;
+}
+.m--gray {
+	color: $gray;
+}
+.m--gray-light {
+	color: $gray-light;
+}
+.m--blue-dark {
+	color: $blue-dark;
+}
+.m--blue {
+	color: $blue;
+}
+.m--blue-light {
+	color: $blue-light;
+}
+.m--green {
+	color: $green;
+}
+.m--green-light {
+	color: $green-light;
+}
+.m--red {
+	color: $red;
+}
+.m--red-light {
+	color: $red-light;
+}
+.m--yellow {
+	color: $yellow;
+}
+.m--yellow-light {
+	color: $yellow-light;
+}
+.m--purple {
+	color: $purple;
+}
+.m--purple-light {
+	color: $purple-light;
+}

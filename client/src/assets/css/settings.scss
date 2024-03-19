@@ -1,0 +1,53 @@
+/* Шрифты */
+$font-family-inter: 'Inter', sans-serif;
+
+/* Базовый шрифт */
+$font-family-base: $font-family-inter;
+$font-size-base: 16px;
+$line-height-base: 24px;
+$color-base: $color-black;
+
+/* Текстовый шрифт */
+$font-family-text: $font-family-inter;
+$font-size-text: 16px;
+$line-height-text: 24px;
+$color-text: $color-middleblack;
+
+/* Табличный шрифт данных */
+$font-family-text: $font-family-inter;
+$font-size-text: 16px;
+$line-height-text: 24px;
+$color-text: $color-middleblack;
+
+$place-max-width: 1588px;
+$menu-width: 280px;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+) !default;
+
+/* Сетка для рабочего поля */
+
+/* Сетка для модального окна */
+$modal-width: 635px;
+$modal-col-count: 8;
+$modal-col-width: 68px;
+$modal-col-gap: 0px;
+/* $modal-margin: calculate(($modal-width - $modal-col-width * $modal-col-count - $modal-col-gap * ($modal-col-count - 1)) / 2); */
+
+$scrollbar-width: 8px;
+
+/* Multiselect */
+:root {
+  --ms-radius: 25px;
+  --ms-line-height: 1.5;
+  --ms-border-color: #ced4da;
+  --ms-border-color-active: #146c43;
+}
+
+/* Адаптив */

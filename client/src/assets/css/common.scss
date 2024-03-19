@@ -1,0 +1,105 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    min-width: 100%;
+    scrollbar-gutter: stable;
+/*
+    height: 100%;
+    overflow-x: auto;
+*/
+}
+
+body {
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    line-height: $line-height-base; 
+    color: $color-base;
+    position: relative;
+    min-width: 320px;
+    /*height: 100%;*/
+}
+
+.modal-open {
+    padding-right: 0 !important;
+}
+
+/* bootstap */
+h1, .h1 {
+    color: $color-middleblack;
+    font-size: 3.375rem;
+    font-weight: 700;
+}
+h2, .h2 {
+    color: $color-middleblack;
+    font-size: 2.125rem;
+    font-weight: 700;
+}
+h3, .h3 {
+    color: $color-lightblack;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+h4, .h4 {
+    color: $color-middleblack;
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+h5, .h5 {
+    color: $color-middleblack;
+    font-size: 1.125rem;
+    font-weight: 500;
+}
+
+.card {
+    &.pill {
+        border-radius: 60px;
+    }
+}
+.popover {
+    box-shadow: 0px 8px 8px rgba(50, 50, 71, 0.08), 0px 8px 16px rgba(50, 50, 71, 0.06);
+    &-header {
+        display: block;
+    }
+    &-body {
+        display: block;
+    }
+}
+.b-table {
+    &-sticky-header {
+        overflow-y: auto;
+        max-height: 40vh;
+        margin-bottom: 1rem;
+        /*margin-right: -1rem;*/
+        /*padding-right: 1rem;*/
+        @include scrollbar($blue-100, $blue-700, $scrollbar-width);
+    }
+    &-sticky-header > .table {
+        /*margin-bottom: 0;*/
+    }
+    &-sticky-header > .table > thead > tr > th {
+        position: sticky;
+        top: 0;
+        z-index: 2;
+        background: $blue-700;
+        color: $white;
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 0;
+            border-bottom: 2px solid $blue-700;
+        }
+    }
+}
+textarea.form-control-lg {
+    min-height: calc(1em + 8rem + 2px);
+}
+.form-switch .form-check-input:not(:checked):focus {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba%280, 0, 0, 0.25%29'/%3e%3c/svg%3e");
+}
