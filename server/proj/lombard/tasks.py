@@ -5,6 +5,7 @@ from account.models import Profile
 from lombard.service import LombardService
 from conf import settings
 import logging
+from settings_site.config_models import SiteConfiguration
 logger = logging.getLogger('notify')
 
 
@@ -47,3 +48,5 @@ def notify_clients():
                 continue
     except Exception as e:
         logger.error(f'Задача прошла не успешно, причина: {str(e)}\n')
+
+

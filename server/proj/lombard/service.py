@@ -4,7 +4,6 @@ from django.conf import settings
 from utils.service import RESTService, ServiceError
 from utils.transport.rest import check_api_response_on_error
 
-
 ACTION_URI_PREFIX = settings.TRANSPORT_1C['LOMBARD_PATH'] + settings.TRANSPORT_1C['SERVICE_PATH']
 
 

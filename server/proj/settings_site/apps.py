@@ -6,3 +6,5 @@ class SettingsSiteConfig(AppConfig):
     name = 'settings_site'
     verbose_name = 'Настройки сайта'
 
+    def ready(self):
+        import settings_site.signals
