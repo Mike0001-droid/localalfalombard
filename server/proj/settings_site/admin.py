@@ -4,3 +4,4 @@ from settings_site.config_models import SiteConfiguration
 
 
 admin.site.register(SiteConfiguration, SingletonModelAdmin)
+

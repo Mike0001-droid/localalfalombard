@@ -7,6 +7,8 @@ from settings_site.tasks import access_block
 
 @receiver (pre_save, sender=SiteConfiguration)
 def pre_save_obj(sender, instance, **kwargs):
+    obj = SiteConfiguration.objects.get()
     if instance.access_flag == False and instance.block_time > 0:
-        access_block.apply_async(eta=datetime.now() + timedelta(minutes=instance.block_time))
+        instance.end_block_date = instance.update_date + timedelta(minutes=instance.block_time)
+        #access_block.apply_async(eta=datetime.now() + timedelta(minutes=instance.block_time))
     

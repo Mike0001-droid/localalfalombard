@@ -1,7 +1,7 @@
 from enum import Enum
 from datetime import datetime
 from django.conf import settings
-from utils.service import RESTService, ServiceError
+from utils.service import RESTService, ServiceError, SettingsSiteError
 from utils.transport.rest import check_api_response_on_error
 
 ACTION_URI_PREFIX = settings.TRANSPORT_1C['LOMBARD_PATH'] + settings.TRANSPORT_1C['SERVICE_PATH']
@@ -105,7 +105,7 @@ class LombardService(RESTService):
             clientId=kwargs.get('client_id', ''),
             ticketId=kwargs.get('ticket_id', ''),
             paymentSum=float(kwargs.get('amount', 0)),
-            paymentDebtSum=float(kwargs.get('debt_amount', 0)),
+            paymentDebtSum=float(kwargs.get('debt_amount', 0)) + float(kwargs.get('penalty_amount', 0)),
             paymentLoanSum=float(kwargs.get('loan_amount', 0)),
             paymentDate=datetime.now().strftime('%Y-%m-%d'),
             transaction_id=kwargs.get('payment_id') or kwargs.get('transaction_id') or kwargs.get('order_id', ''),

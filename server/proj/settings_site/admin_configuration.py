@@ -16,7 +16,15 @@ from settings_site import solo_settings
 class SingletonModelAdmin(admin.ModelAdmin):  # type: ignore[type-arg]
     object_history_template = "admin/solo/object_history.html"
     change_form_template = "admin/solo/change_form.html"
-
+    fields = (
+        'text_error',
+        'block_time',
+        'access_flag',
+        'update_date',
+        'end_block_date',
+    )
+    
+    readonly_fields = ['update_date', 'end_block_date',]
     def has_add_permission(self, request: HttpRequest) -> bool:
         return False
 
@@ -95,3 +103,5 @@ class SingletonModelAdmin(admin.ModelAdmin):  # type: ignore[type-arg]
     @property
     def singleton_instance_id(self) -> int:
         return getattr(self.model, 'singleton_instance_id', DEFAULT_SINGLETON_INSTANCE_ID)
+    
+    

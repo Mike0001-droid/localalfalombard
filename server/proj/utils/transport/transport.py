@@ -7,6 +7,10 @@ class TransportError(Exception):
         self.code = code
         self.jsn = jsn
 
+class AccessBlockError(Exception):
+    def __init__(self, message):
+        self.message = message
+
 
 class Transport(ABC):
     url = None

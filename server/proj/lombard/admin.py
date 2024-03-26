@@ -6,3 +6,4 @@ from lombard.models import Page
 class PageAdmin(admin.ModelAdmin):
     list_display = ('title', 'slug', 'date_publication', 'publication')
     search_fields = ('title', 'publication')
+    readonly_fields = ('title', )

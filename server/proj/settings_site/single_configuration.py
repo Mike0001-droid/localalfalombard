@@ -6,6 +6,7 @@ from django.conf import settings
 from django.core.cache import BaseCache, caches
 from django.db import models
 from settings_site import solo_settings
+from typing_extensions import Self
 if sys.version_info >= (3, 11):
     from typing import Self
 else:

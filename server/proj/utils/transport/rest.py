@@ -8,8 +8,9 @@ from django.conf import settings
 from requests import HTTPError
 
 from payments.models import TerminalsPaymo
-from utils.transport import Transport, TransportError
+from utils.transport import Transport, TransportError, AccessBlockError
 
+from settings_site.config_models import SiteConfiguration
 import logging
 logger = logging.getLogger('transport')
 
@@ -28,6 +29,8 @@ TIMEOUT = settings.TRANSPORT_1C['TIMEOUT']
 class RESTError(TransportError):
     pass
 
+class SettingsSiteError(AccessBlockError):
+    pass
 
 class REST(Transport):
     url = URL
@@ -35,10 +38,16 @@ class REST(Transport):
     password = PASSWORD
     timeout = TIMEOUT
 
+  
+
     def call(self, method, *args, **kwargs):
         logger.info('Calling REST method %s with args: %s' % (method, kwargs))
         # print('Calling REST method %s with args: %s' % (method, kwargs))
-
+        access_1c = SiteConfiguration.objects.get()
+        if access_1c.access_flag == False:
+            logger.debug('Доступ к 1с ограничен')
+            raise SettingsSiteError(access_1c.text_error) 
+        
         assert not (args and kwargs), 'args and kwargs cannot be passed together'
 
         if args:

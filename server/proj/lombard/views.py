@@ -44,6 +44,8 @@ class LombardViewSet(ViewSet):
             return Response({'error': 'Метод не найден'}, status=status.HTTP_400_BAD_REQUEST)
         except service.ServiceError as e:
             return Response({'error': e.jsn}, status=status.HTTP_400_BAD_REQUEST)
+        except service.SettingsSiteError as e:
+            return Response({'error': e.message}, status=status.HTTP_400_BAD_REQUEST) 
         serializer = FavoritesSerializer(favorites, request_user=request.user, many=True)
         result['favorites'] = serializer.data
         return Response(result)
@@ -59,6 +61,8 @@ class LombardViewSet(ViewSet):
             }, status=status.HTTP_400_BAD_REQUEST)
         except service.ServiceError as e:
             return Response({'error': e.jsn}, status=status.HTTP_400_BAD_REQUEST)
+        except service.SettingsSiteError as e:
+            return Response({'error': e.message}, status=status.HTTP_400_BAD_REQUEST)
         return Response(result)
 
     @action(detail=False, methods=['post'])
@@ -72,6 +76,8 @@ class LombardViewSet(ViewSet):
             }, status=status.HTTP_400_BAD_REQUEST)
         except service.ServiceError as e:
             return Response({'error': e.jsn}, status=status.HTTP_400_BAD_REQUEST)
+        except service.SettingsSiteError as e:
+            return Response({'error': e.message}, status=status.HTTP_400_BAD_REQUEST)
         return Response(result)
 
     @action(detail=False, methods=['post'])
@@ -85,6 +91,8 @@ class LombardViewSet(ViewSet):
             }, status=status.HTTP_400_BAD_REQUEST)
         except service.ServiceError as e:
             return Response({'error': e.jsn}, status=status.HTTP_400_BAD_REQUEST)
+        except service.SettingsSiteError as e:
+            return Response({'error': e.message}, status=status.HTTP_400_BAD_REQUEST)
         return Response(result)
 
     @action(detail=False, methods=['post'])
@@ -98,6 +106,8 @@ class LombardViewSet(ViewSet):
             }, status=status.HTTP_400_BAD_REQUEST)
         except service.ServiceError as e:
             return Response({'error': e.jsn}, status=status.HTTP_400_BAD_REQUEST)
+        except service.SettingsSiteError as e:
+            return Response({'error': e.message}, status=status.HTTP_400_BAD_REQUEST)
         return Response(result)
 
     @action(detail=False, methods=['post'])
@@ -110,6 +120,10 @@ class LombardViewSet(ViewSet):
             }, status=status.HTTP_400_BAD_REQUEST)
         except service.ServiceError as e:
             return Response({'error': e.jsn}, status=status.HTTP_400_BAD_REQUEST)
+        except service.SettingsSiteError as e:
+            return Response({'error': e.message}, status=status.HTTP_400_BAD_REQUEST)
+
+        
         return Response(result)
 
     @property
@@ -136,6 +150,7 @@ class FavoritesViewSet(GenericViewSet):
             ticket = Favorites.objects.get(ticket=request.data.get('ticket'), user=request.user)
             serializer = self.get_serializer(ticket, request_user=request.user)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
+        
         except Favorites.DoesNotExist:
             params = request.data
             params['user'] = request.user.id
